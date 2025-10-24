@@ -7,6 +7,8 @@ import jakarta.json.stream.JsonGenerator;
 import jakarta.ws.rs.client.Entity;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import ma.emsi.gabbas.tp1gabbasyahya.llm.LlmClientPourGemini;
+import ma.emsi.gabbas.tp1gabbasyahya.llm.LlmInteraction;
 
 import java.io.Serializable;
 import java.io.StringReader;
@@ -136,7 +138,7 @@ public class JsonUtilPourGemini implements Serializable {
                         .add("text", question))
                 .build();
         JsonObject userContent = Json.createObjectBuilder()
-                .add("role", "user")
+        .add("role", "user")
                 .add("parts", userContentParts)
                 .build();
         JsonArray contents = Json.createArrayBuilder()
